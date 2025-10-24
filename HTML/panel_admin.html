@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Panel Admin - Sistema</title>
+  <link rel="stylesheet" href="../HTML/css/panel_admin.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Almacén X</div>
+    <nav class="topnav">
+      <a href="productos.html">Productos</a>
+      <a href="inventario.html">Inventario</a>
+      <a href="pedidos.html">Pedidos</a>
+      <a href="reportes.html">Reportes</a>
+      <a class="logout" href="logout.php">Cerrar sesión</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <ul>
+        <li><a href="panel_admin.html">Dashboard</a></li>
+        <li><a href="usuarios.html">Usuarios</a></li>
+        <li><a href="proveedores.html">Proveedores</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="inventario.html">Inventario</a></li>
+        <li><a href="reportes.html">Reportes</a></li>
+      </ul>
+    </aside>
+
+    <main class="main">
+      <h2>Bienvenido, Administrador</h2>
+
+      <section class="cards">
+        <article class="stat">
+          <h3>Productos</h3>
+          <p class="num">1,254</p>
+        </article>
+        <article class="stat">
+          <h3>Pedidos</h3>
+          <p class="num">132</p>
+        </article>
+        <article class="stat">
+          <h3>Entradas pendientes</h3>
+          <p class="num">8</p>
+        </article>
+        <article class="stat">
+          <h3>Alertas inventario</h3>
+          <p class="num">5</p>
+        </article>
+      </section>
+
+      <section class="recent">
+        <h3>Últimas actividades</h3>
+        <table class="table">
+          <thead><tr><th>Fecha</th><th>Evento</th><th>Usuario</th></tr></thead>
+          <tbody>
+            <tr><td>2025-10-17</td><td>Registro nuevo producto</td><td>operario1</td></tr>
+            <tr><td>2025-10-16</td><td>Salida autorizada</td><td>gerente1</td></tr>
+            <tr><td>2025-10-15</td><td>Pedido creado</td><td>cliente2</td></tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
