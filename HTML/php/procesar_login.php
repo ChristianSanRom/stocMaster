@@ -57,7 +57,7 @@ else {
                 header("Location: ../panel_admin.html");
                 break;
             case 'operario':
-                header("Location: ../panel_admin.html");
+                header("Location: includes/panel_operario.php");
                 break;
             case 'gerente':
                 header("Location: ../panel_admin.html");
