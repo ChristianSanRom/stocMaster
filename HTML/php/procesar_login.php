@@ -2,7 +2,6 @@
 session_start();
 require_once "config/conexion.php";
 
-// Verificar campos
 if (empty($_POST['email']) || empty($_POST['password']) || empty($_POST['role'])) {
     header("Location: ../login.html?error=campos_vacios");
     exit();
@@ -24,7 +23,7 @@ if ($role === 'cliente') {
         $cliente = $resultado->fetch_assoc();
         $_SESSION['usuario'] = $cliente['nombre'];
         $_SESSION['rol'] = 'cliente';
-        header("Location: ../panel_admin.html");
+        header("Location: ../panel_cliente.html");
         exit();
     } else {
         header("Location: ../login.html?error=credenciales_invalidas");
@@ -32,7 +31,6 @@ if ($role === 'cliente') {
     }
 }
 
-// USUARIOS (administrador, operario, gerente)
 else {
     $sql = "SELECT * FROM usuarios WHERE email = ? AND contraseña = ? AND rol = ?";
     $stmt = $conn->prepare($sql);
@@ -51,16 +49,15 @@ else {
         $_SESSION['usuario'] = $usuario['nombre'];
         $_SESSION['rol'] = $usuario['rol'];
 
-        // Redirecciones por rol
         switch ($usuario['rol']) {
             case 'administrador':
                 header("Location: ../panel_admin.html");
                 break;
             case 'operario':
-                header("Location: includes/panel_operario.php");
+                header("Location: ../panel_operario.html");
                 break;
             case 'gerente':
-                header("Location: ../panel_admin.html");
+                header("Location: ../panel_gerente.html");
                 break;
         }
         exit();
